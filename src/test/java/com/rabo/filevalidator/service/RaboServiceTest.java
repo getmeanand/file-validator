@@ -1,5 +1,5 @@
 
-package com.rabo.filevalidator;
+package com.rabo.filevalidator.service;
 
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -23,7 +23,6 @@ import com.rabo.filevalidator.exceptions.CustomerFileNotFoundException;
 import com.rabo.filevalidator.files.CSVFile;
 import com.rabo.filevalidator.files.XMLFile;
 import com.rabo.filevalidator.operations.FileOperationsFactory;
-import com.rabo.filevalidator.service.RaboService;
 
 @RunWith(SpringRunner.class)
 public class RaboServiceTest {
