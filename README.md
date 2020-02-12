@@ -10,7 +10,7 @@ There are two validations:
  3. Build the project.
  4. Run the project.
  5. Hit the URL : http://localhost:8181/csvFileValidator
-    Hit the URL : http://localhost:8181/xmlFileValidator
- 6. file-validator starts processing user data(xml,csv file from classspath), and validates it. finally will display both the transaction reference and description of each of the failed records as response
+                : http://localhost:8181/xmlFileValidator
+ 6. file-validator starts processing user data(xml,csv file from class path), and validates it. finally will display both the transaction     reference and description of each of the failed records as response
   
   
