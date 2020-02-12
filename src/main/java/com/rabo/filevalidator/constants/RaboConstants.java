@@ -16,8 +16,6 @@ public class RaboConstants {
 
 	public static final String VALIDATE_FILE_CSV = "records.csv";
 
-	public static final String MODEL_OBJECT_RECORDLIST = "recordList";
-
 	public static final int INT_VAL_ZERO = 0;
 
 	public static final int INT_VAL_ONE = 1;

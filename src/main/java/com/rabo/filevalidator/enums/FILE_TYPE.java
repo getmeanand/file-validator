@@ -1,5 +1,5 @@
 package com.rabo.filevalidator.enums;
 
-public enum FILETYPE {
+public enum FILE_TYPE {
 	XML, CSV;
 }

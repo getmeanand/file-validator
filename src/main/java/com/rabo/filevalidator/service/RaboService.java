@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import com.rabo.filevalidator.constants.RaboConstants;
 import com.rabo.filevalidator.controller.RaboController;
 import com.rabo.filevalidator.dto.Record;
-import com.rabo.filevalidator.enums.FILETYPE;
+import com.rabo.filevalidator.enums.FILE_TYPE;
 import com.rabo.filevalidator.exceptions.CustomerFileNotFoundException;
 import com.rabo.filevalidator.operations.FileOperations;
 import com.rabo.filevalidator.operations.FileOperationsFactory;
@@ -27,7 +27,7 @@ public class RaboService {
 	private List<Record> filteredCustomerList;
 
 	public List<Record> loadAndProcessCSVFile() throws CustomerFileNotFoundException, IOException {
-		FileOperations csvFileOperation = (FileOperations) fileFactory.getFileInstance(FILETYPE.CSV);
+		FileOperations csvFileOperation = (FileOperations) fileFactory.getFileInstance(FILE_TYPE.CSV);
 
 		filteredCustomerList = csvFileOperation
 				.readCustomerValidatorFile(csvFileOperation.loadCustomerValidatorFile(RaboConstants.VALIDATE_FILE_CSV));
@@ -37,7 +37,7 @@ public class RaboService {
 	}
 
 	public List<Record> loadAndProcessXMLFile() throws CustomerFileNotFoundException {
-		FileOperations xmlFileOperation = (FileOperations) fileFactory.getFileInstance(FILETYPE.XML);
+		FileOperations xmlFileOperation = (FileOperations) fileFactory.getFileInstance(FILE_TYPE.XML);
 
 		filteredCustomerList = xmlFileOperation
 				.readCustomerValidatorFile(xmlFileOperation.loadCustomerValidatorFile(RaboConstants.VALIDATE_FILE_XML));

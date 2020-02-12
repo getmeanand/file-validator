@@ -2,7 +2,7 @@ package com.rabo.filevalidator.operations;
 
 import org.springframework.stereotype.Component;
 
-import com.rabo.filevalidator.enums.FILETYPE;
+import com.rabo.filevalidator.enums.*;
 
 @Component
 public class FileOperationsFactory extends BaseFileOperations {
@@ -14,14 +14,14 @@ public class FileOperationsFactory extends BaseFileOperations {
 	 * @param strFileFile
 	 * 
 	 */
-	public Object getFileInstance(FILETYPE fileTypeObj) {
+	public Object getFileInstance(FILE_TYPE fileTypeObj) {
 		if (fileTypeObj == null) {
 			return null;
 		}
-		if (FILETYPE.XML.equals(fileTypeObj)) { // checks if files type is xml
-			return fileMapObject.get(FILETYPE.XML);
-		} else if (FILETYPE.CSV.equals(fileTypeObj)) {// checks if files type is csv
-			return  fileMapObject.get(FILETYPE.CSV);
+		if (FILE_TYPE.XML.equals(fileTypeObj)) { // checks if files type is xml
+			return fileMapObject.get(FILE_TYPE.XML);
+		} else if (FILE_TYPE.CSV.equals(fileTypeObj)) {// checks if files type is csv
+			return  fileMapObject.get(FILE_TYPE.CSV);
 		}
 
 		return null;

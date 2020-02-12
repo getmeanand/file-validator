@@ -18,7 +18,7 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.rabo.filevalidator.dto.Record;
-import com.rabo.filevalidator.enums.FILETYPE;
+import com.rabo.filevalidator.enums.FILE_TYPE;
 import com.rabo.filevalidator.exceptions.CustomerFileNotFoundException;
 import com.rabo.filevalidator.files.CSVFile;
 import com.rabo.filevalidator.files.XMLFile;
@@ -40,22 +40,22 @@ public class RaboServiceTest {
 
 	@Test
 	public void testLoadAndProcessCSVFile() throws CustomerFileNotFoundException, IOException {
-		when(fileFactory.getFileInstance(FILETYPE.CSV)).thenReturn(new CSVFile());
+		when(fileFactory.getFileInstance(FILE_TYPE.CSV)).thenReturn(new CSVFile());
 		List<Record> actualRecords = raboServiceTest.loadAndProcessCSVFile();
 
 		Assert.assertNotNull(actualRecords);
 
-		verify(fileFactory, times(1)).getFileInstance(FILETYPE.CSV);
+		verify(fileFactory, times(1)).getFileInstance(FILE_TYPE.CSV);
 	}
 
 	@Test
 	public void testLoadAndProcessXMLFile() throws CustomerFileNotFoundException {
-		when(fileFactory.getFileInstance(FILETYPE.XML)).thenReturn(new XMLFile());
+		when(fileFactory.getFileInstance(FILE_TYPE.XML)).thenReturn(new XMLFile());
 		List<Record> actualRecords = raboServiceTest.loadAndProcessXMLFile();
 
 		Assert.assertNotNull(actualRecords);
 
-		verify(fileFactory, times(1)).getFileInstance(FILETYPE.XML);
+		verify(fileFactory, times(1)).getFileInstance(FILE_TYPE.XML);
 	}
 
 }
